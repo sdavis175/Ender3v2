@@ -1,3 +1,13 @@
+[update_manager moonraker-obico]
+type = git_repo
+path = ~/moonraker-obico
+origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
+env = /home/pi/moonraker-env/bin/python
+requirements = requirements.txt
+install_script = install.sh
+managed_services = 
+	moonraker-obico
+
 [server]
 host = 0.0.0.0
 port = 7125
@@ -55,13 +65,10 @@ origin = https://github.com/mainsail-crew/sonar.git
 primary_branch = main
 managed_services = sonar
 
-[update_manager moonraker-obico]
+[update_manager client z_calibration]
 type = git_repo
-path = ~/moonraker-obico
-origin = https://github.com/TheSpaghettiDetective/moonraker-obico.git
-env = /home/pi/moonraker-env/bin/python
-requirements = requirements.txt
+path = ~/klipper_z_calibration
+origin = https://github.com/protoloft/klipper_z_calibration.git
 install_script = install.sh
-managed_services = 
-	moonraker-obico
+managed_services = klipper
 
